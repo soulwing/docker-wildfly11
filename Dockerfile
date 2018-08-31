@@ -3,8 +3,8 @@ FROM openjdk:8-jre-alpine
 ARG CONFIG_DIR=/etc/wildfly/config.d/
 ARG WILDFLY_VERSION=11.0.0.Final
 ARG WILDFLY_URL=http://search.maven.org/remotecontent?filepath=org/wildfly/wildfly-dist/${WILDFLY_VERSION}/wildfly-dist-${WILDFLY_VERSION}.zip
-ARG S6_VERSION=v1.18.1.5-soulwing
-ARG S6_REPO=https://github.com/soulwing/s6-overlay/releases/download/
+ARG S6_VERSION=v1.21.4.0
+ARG S6_REPO=https://github.com/just-containers/s6-overlay/releases/download
 ARG S6_URL=${S6_REPO}/${S6_VERSION}/s6-overlay-amd64.tar.gz
 ARG APPS_BASE=/apps
 ENV WILDFLY_USER=wildfly \
