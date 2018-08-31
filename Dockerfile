@@ -17,7 +17,7 @@ ENV WILDFLY_BIND_ADDRESS=${WILDFLY_RUNTIME_BASE_DIR}/configuration/bind_address
 ENV WILDFLY_MGMT_BIND_ADDRESS=${WILDFLY_RUNTIME_BASE_DIR}/configuration/mgmt_bind_address
 
 RUN \
-  apk add --no-cache --virtual build-dependencies wget ca-certificates && \
+  apk add --no-cache --virtual build-dependencies wget ca-certificates openssl && \
   echo "fetching s6-overlay" && \
   wget -qO /tmp/s6-overlay.tar.gz ${S6_URL} && \
   echo "fetching wildfly" && \
