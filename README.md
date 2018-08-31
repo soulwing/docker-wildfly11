@@ -1,11 +1,11 @@
-# Docker Image for Wildfly 10
+# Docker Image for Wildfly 11
 
-This is a Docker image for Wildfly 10. It is based on the Alpine variant of the official [OpenJDK container image](https://hub.docker.com/_/openjdk/) and uses @just-containers [s6-overlay](https://github.com/just-containers/s6-overlay) to run Wildfly.
+This is a Docker image for Wildfly 11. It is based on the Alpine variant of the official [OpenJDK container image](https://hub.docker.com/_/openjdk/) and uses @just-containers [s6-overlay](https://github.com/just-containers/s6-overlay) to run Wildfly.
 
 ## Build
 
 ```
-docker image build -t soulwing/wildfly10 .
+docker image build -t soulwing/wildfly11 .
 ```
 
 ## Environment Variables
@@ -30,7 +30,7 @@ the image building process.
 
 This is the location where Wildfly is installed in the container filesystem. 
 It defaults to `/apps/wildfly` but could be specified as a different location
-when the `soulwing/wildfly10` image is built.
+when the `soulwing/wildfly11` image is built.
 
 Downstream images that need to install things into the Wildfly should use 
 this variable. Examples of things you might want to install:
