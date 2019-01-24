@@ -1,4 +1,5 @@
-FROM openjdk:8-jre-alpine
+ARG JRE_VERSION=8-jre-alpine
+FROM openjdk:${JRE_VERSION}
 
 ARG CONFIG_DIR=/etc/wildfly/config.d/
 ARG WILDFLY_VERSION=11.0.0.Final
