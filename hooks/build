@@ -1,2 +1,4 @@
 #!/bin/bash
+echo "running custom build hook"
+echo "BUILD_JRE_VERSION=$BUILD_JRE_VERSION"
 docker build --build-arg JRE_VERSION="$BUILD_JRE_VERSION" -f $DOCKERFILE_PATH -t $IMAGE_NAME .
