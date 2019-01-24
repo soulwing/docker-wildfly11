@@ -1,2 +1,2 @@
 #!/bin/bash
-docker build --build-arg JRE_VERSION=$BUILD_JRE_VERSION -f $DOCKERFILE_PATH -t $IMAGE_NAME .
+docker build --build-arg JRE_VERSION="$BUILD_JRE_VERSION" -f $DOCKERFILE_PATH -t $IMAGE_NAME .
