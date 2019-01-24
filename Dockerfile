@@ -19,9 +19,9 @@ ENV WILDFLY_MGMT_BIND_ADDRESS=${WILDFLY_RUNTIME_BASE_DIR}/configuration/mgmt_bin
 
 RUN \
   apk add --no-cache --virtual build-dependencies wget ca-certificates openssl && \
-  echo "fetching s6-overlay" && \
+  echo "fetching s6-overlay ${S6_VERSION}" && \
   wget -qO /tmp/s6-overlay.tar.gz ${S6_URL} && \
-  echo "fetching wildfly" && \
+  echo "fetching wildfly ${WILDFLY_VERSION}" && \
   wget -qO /tmp/wildfly.zip ${WILDFLY_URL} && \
   tar -zxf /tmp/s6-overlay.tar.gz -C / && \
   mkdir ${APPS_BASE} && \
