@@ -1,9 +1,32 @@
 #!/bin/bash
 echo "running custom build hook"
 
+case $CACHE_TAG in
+  10-*)
+    BUILD_WILDFLY_VERSION=10.1.0.Final
+    ;;
+  11-*)
+    BUILD_WILDFLY_VERSION=11.0.0.Final
+    ;;
+  12-*)
+    BUILD_WILDFLY_VERSION=12.0.0.Final
+    ;;
+  13-*)
+    BUILD_WILDFLY_VERSION=13.0.0.Final
+    ;;
+  14-*)
+    BUILD_WILDFLY_VERSION=14.0.0.Final
+    ;;
+  *)
+    BUILD_WILDFLY_VERSION=15.0.0.Final
+    exit 1
+    ;;
+esac
+
 echo "JRE_VERSION=$BUILD_JRE_VERSION"
-echo "WILDFLY_VERSION=$BUILD_WILDFLY_VERSION"
 echo "S6_VERSION=$BUILD_S6_VERSION"
+echo "BUILD_WILDFLY_VERSION=$BUILD_WILDFLY_VERSION"
+
 docker build \
     --build-arg JRE_VERSION="$BUILD_JRE_VERSION" \
     --build-arg WILDFLY_VERSION="$BUILD_WILDFLY_VERSION" \
