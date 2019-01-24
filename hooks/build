@@ -19,7 +19,6 @@ case $CACHE_TAG in
     ;;
   *)
     BUILD_WILDFLY_VERSION=15.0.0.Final
-    exit 1
     ;;
 esac
 
